@@ -1,0 +1,315 @@
+[0.074s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.074s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b0fd16e5f70>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b0fd185bb60>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b0fd185bb60>>, mixin_verb=('build',))
+[0.098s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.099s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.099s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.099s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.099s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.099s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.099s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws'
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.099s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extensions ['ignore', 'ignore_ament_install']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extension 'ignore'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extension 'ignore_ament_install'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extensions ['colcon_pkg']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extension 'colcon_pkg'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extensions ['colcon_meta']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extension 'colcon_meta'
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extensions ['ros']
+[0.115s] Level 1:colcon.colcon_core.package_identification:_identify(src/diana7_description) by extension 'ros'
+[0.116s] DEBUG:colcon.colcon_core.package_identification:Package 'src/diana7_description' with type 'ros.ament_cmake' and name 'diana7_description'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extensions ['ignore', 'ignore_ament_install']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extension 'ignore'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extension 'ignore_ament_install'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extensions ['colcon_pkg']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extension 'colcon_pkg'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extensions ['colcon_meta']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extension 'colcon_meta'
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extensions ['ros']
+[0.116s] Level 1:colcon.colcon_core.package_identification:_identify(src/pendulum_description) by extension 'ros'
+[0.117s] DEBUG:colcon.colcon_core.package_identification:Package 'src/pendulum_description' with type 'ros.ament_cmake' and name 'pendulum_description'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extensions ['ignore', 'ignore_ament_install']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extension 'ignore'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extension 'ignore_ament_install'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extensions ['colcon_pkg']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extension 'colcon_pkg'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extensions ['colcon_meta']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extension 'colcon_meta'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extensions ['ros']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/ridgeback_description) by extension 'ros'
+[0.117s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ridgeback_description' with type 'ros.ament_cmake' and name 'ridgeback_description'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extensions ['ignore', 'ignore_ament_install']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extension 'ignore'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extension 'ignore_ament_install'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extensions ['colcon_pkg']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extension 'colcon_pkg'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extensions ['colcon_meta']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extension 'colcon_meta'
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extensions ['ros']
+[0.117s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_sim) by extension 'ros'
+[0.118s] DEBUG:colcon.colcon_core.package_identification:Package 'src/simple_sim' with type 'ros.ament_python' and name 'simple_sim'
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.118s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.132s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install
+[0.132s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 44 installed packages in /home/bauer/nav2_ws/install
+[0.133s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 23 installed packages in /home/bauer/ros2_ws/install
+[0.135s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 492 installed packages in /opt/ros/jazzy
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'cmake_target' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'diana7_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.189s] DEBUG:colcon.colcon_core.verb:Building package 'diana7_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description', 'merge_install': False, 'path': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/diana7_description', 'symlink_install': False, 'test_result_base': None}
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'cmake_target' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'pendulum_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.189s] DEBUG:colcon.colcon_core.verb:Building package 'pendulum_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description', 'merge_install': False, 'path': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/pendulum_description', 'symlink_install': False, 'test_result_base': None}
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'cmake_target' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.189s] Level 5:colcon.colcon_core.verb:set package 'ridgeback_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.189s] DEBUG:colcon.colcon_core.verb:Building package 'ridgeback_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description', 'merge_install': False, 'path': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/ridgeback_description', 'symlink_install': False, 'test_result_base': None}
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'cmake_target' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'cmake_clean_cache' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'cmake_clean_first' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'cmake_force_configure' from command line to 'False'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'ament_cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'catkin_cmake_args' from command line to 'None'
+[0.190s] Level 5:colcon.colcon_core.verb:set package 'simple_sim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.190s] DEBUG:colcon.colcon_core.verb:Building package 'simple_sim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim', 'merge_install': False, 'path': '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/simple_sim', 'symlink_install': False, 'test_result_base': None}
+[0.190s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.190s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.191s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/diana7_description' with build type 'ament_cmake'
+[0.191s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/diana7_description'
+[0.192s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.193s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.193s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.202s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/pendulum_description' with build type 'ament_cmake'
+[0.202s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/pendulum_description'
+[0.202s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.202s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.208s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/ridgeback_description' with build type 'ament_cmake'
+[0.208s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/ridgeback_description'
+[0.208s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.208s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.214s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/simple_sim' with build type 'ament_python'
+[0.214s] Level 1:colcon.colcon_core.shell:create_environment_hook('simple_sim', 'ament_prefix_path')
+[0.214s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/hook/ament_prefix_path.ps1'
+[0.214s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/hook/ament_prefix_path.dsv'
+[0.215s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/hook/ament_prefix_path.sh'
+[0.215s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.215s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.224s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description -- -j16 -l16
+[0.226s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description -- -j16 -l16
+[0.226s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description -- -j16 -l16
+[0.396s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/simple_sim'
+[0.396s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.396s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.404s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description -- -j16 -l16
+[0.418s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description
+[0.420s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description -- -j16 -l16
+[0.420s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description
+[0.420s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description -- -j16 -l16
+[0.421s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description
+[0.434s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(diana7_description)
+[0.434s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description
+[0.436s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description' for CMake module files
+[0.436s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description' for CMake config files
+[0.436s] Level 1:colcon.colcon_core.shell:create_environment_hook('diana7_description', 'cmake_prefix_path')
+[0.436s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/hook/cmake_prefix_path.ps1'
+[0.436s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/hook/cmake_prefix_path.dsv'
+[0.437s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/hook/cmake_prefix_path.sh'
+[0.437s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/bin'
+[0.437s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/lib/pkgconfig/diana7_description.pc'
+[0.437s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/lib/python3.12/site-packages'
+[0.437s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/bin'
+[0.438s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.ps1'
+[0.438s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.dsv'
+[0.438s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.sh'
+[0.439s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.bash'
+[0.439s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.zsh'
+[0.439s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/colcon-core/packages/diana7_description)
+[0.440s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(diana7_description)
+[0.440s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description' for CMake module files
+[0.441s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description' for CMake config files
+[0.441s] Level 1:colcon.colcon_core.shell:create_environment_hook('diana7_description', 'cmake_prefix_path')
+[0.441s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/hook/cmake_prefix_path.ps1'
+[0.441s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/hook/cmake_prefix_path.dsv'
+[0.441s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/hook/cmake_prefix_path.sh'
+[0.442s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/bin'
+[0.442s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/lib/pkgconfig/diana7_description.pc'
+[0.442s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/lib/python3.12/site-packages'
+[0.442s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/bin'
+[0.442s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.ps1'
+[0.442s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.dsv'
+[0.443s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.sh'
+[0.443s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.bash'
+[0.443s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.zsh'
+[0.443s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/colcon-core/packages/diana7_description)
+[0.443s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pendulum_description)
+[0.443s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description' for CMake module files
+[0.444s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description' for CMake config files
+[0.444s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description
+[0.445s] Level 1:colcon.colcon_core.shell:create_environment_hook('pendulum_description', 'cmake_prefix_path')
+[0.445s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/hook/cmake_prefix_path.ps1'
+[0.445s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/hook/cmake_prefix_path.dsv'
+[0.445s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/hook/cmake_prefix_path.sh'
+[0.445s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/bin'
+[0.446s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/lib/pkgconfig/pendulum_description.pc'
+[0.446s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/lib/python3.12/site-packages'
+[0.446s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/bin'
+[0.446s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.ps1'
+[0.446s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.dsv'
+[0.446s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.sh'
+[0.447s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.bash'
+[0.447s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.zsh'
+[0.447s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/colcon-core/packages/pendulum_description)
+[0.449s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pendulum_description)
+[0.449s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description' for CMake module files
+[0.449s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description' for CMake config files
+[0.450s] Level 1:colcon.colcon_core.shell:create_environment_hook('pendulum_description', 'cmake_prefix_path')
+[0.450s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/hook/cmake_prefix_path.ps1'
+[0.450s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/hook/cmake_prefix_path.dsv'
+[0.450s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/hook/cmake_prefix_path.sh'
+[0.450s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/bin'
+[0.450s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/lib/pkgconfig/pendulum_description.pc'
+[0.450s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/lib/python3.12/site-packages'
+[0.451s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/bin'
+[0.451s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.ps1'
+[0.451s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.dsv'
+[0.451s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.sh'
+[0.451s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.bash'
+[0.452s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.zsh'
+[0.452s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/colcon-core/packages/pendulum_description)
+[0.452s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ridgeback_description)
+[0.452s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description' for CMake module files
+[0.453s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description
+[0.453s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description' for CMake config files
+[0.453s] Level 1:colcon.colcon_core.shell:create_environment_hook('ridgeback_description', 'cmake_prefix_path')
+[0.453s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/hook/cmake_prefix_path.ps1'
+[0.453s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/hook/cmake_prefix_path.dsv'
+[0.454s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/hook/cmake_prefix_path.sh'
+[0.454s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/bin'
+[0.454s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/lib/pkgconfig/ridgeback_description.pc'
+[0.454s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/lib/python3.12/site-packages'
+[0.454s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/bin'
+[0.454s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.ps1'
+[0.454s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.dsv'
+[0.455s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.sh'
+[0.455s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.bash'
+[0.455s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.zsh'
+[0.455s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/colcon-core/packages/ridgeback_description)
+[0.455s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ridgeback_description)
+[0.456s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description' for CMake module files
+[0.456s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description' for CMake config files
+[0.456s] Level 1:colcon.colcon_core.shell:create_environment_hook('ridgeback_description', 'cmake_prefix_path')
+[0.456s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/hook/cmake_prefix_path.ps1'
+[0.456s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/hook/cmake_prefix_path.dsv'
+[0.456s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/hook/cmake_prefix_path.sh'
+[0.457s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/bin'
+[0.457s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/lib/pkgconfig/ridgeback_description.pc'
+[0.457s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/lib/python3.12/site-packages'
+[0.457s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/bin'
+[0.457s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.ps1'
+[0.457s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.dsv'
+[0.457s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.sh'
+[0.458s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.bash'
+[0.458s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/ridgeback_description/package.zsh'
+[0.458s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/ridgeback_description/share/colcon-core/packages/ridgeback_description)
+[0.890s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/simple_sim': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/simple_sim build --build-base /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/build install --record /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/install.log --single-version-externally-managed install_data
+[1.321s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim' for CMake module files
+[1.322s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/simple_sim' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/simple_sim build --build-base /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/build install --record /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/install.log --single-version-externally-managed install_data
+[1.322s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim' for CMake config files
+[1.323s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib'
+[1.323s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/bin'
+[1.323s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/pkgconfig/simple_sim.pc'
+[1.323s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages'
+[1.324s] Level 1:colcon.colcon_core.shell:create_environment_hook('simple_sim', 'pythonpath')
+[1.324s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/hook/pythonpath.ps1'
+[1.324s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/hook/pythonpath.dsv'
+[1.324s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/hook/pythonpath.sh'
+[1.325s] Level 1:colcon.colcon_core.environment:checking '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/bin'
+[1.325s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(simple_sim)
+[1.325s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/package.ps1'
+[1.325s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/package.dsv'
+[1.325s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/package.sh'
+[1.326s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/package.bash'
+[1.326s] INFO:colcon.colcon_core.shell:Creating package script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/package.zsh'
+[1.326s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/colcon-core/packages/simple_sim)
+[1.326s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.326s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.326s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.326s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.332s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.332s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.332s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.343s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.343s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/local_setup.ps1'
+[1.344s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/_local_setup_util_ps1.py'
+[1.345s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/setup.ps1'
+[1.348s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/local_setup.sh'
+[1.348s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/_local_setup_util_sh.py'
+[1.348s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/setup.sh'
+[1.350s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/local_setup.bash'
+[1.350s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/setup.bash'
+[1.353s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/local_setup.zsh'
+[1.353s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/setup.zsh'

@@ -1,0 +1,46 @@
+[0.028s] Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/diana7_description -DCMAKE_INSTALL_PREFIX=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description
+[0.087s] -- The C compiler identification is GNU 13.3.0
+[0.140s] -- The CXX compiler identification is GNU 13.3.0
+[0.158s] -- Detecting C compiler ABI info
+[0.268s] -- Detecting C compiler ABI info - done
+[0.274s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.274s] -- Detecting C compile features
+[0.275s] -- Detecting C compile features - done
+[0.285s] -- Detecting CXX compiler ABI info
+[0.406s] -- Detecting CXX compiler ABI info - done
+[0.412s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.413s] -- Detecting CXX compile features
+[0.413s] -- Detecting CXX compile features - done
+[0.422s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.630s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.839s] -- Found xacro: 2.0.13 (/opt/ros/jazzy/share/xacro/cmake)
+[0.848s] -- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.008s] -- Added test 'lint_cmake' to check CMake code style
+[1.010s] -- Added test 'xmllint' to check XML markup files
+[1.014s] -- Configuring done (1.0s)
+[1.017s] -- Generating done (0.0s)
+[1.018s] -- Build files have been written to: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description
+[1.025s] Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/diana7_description -DCMAKE_INSTALL_PREFIX=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description
+[1.026s] Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description -- -j16 -l16
+[1.091s] Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description -- -j16 -l16
+[1.109s] Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description
+[1.122s] -- Install configuration: ""
+[1.122s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/urdf
+[1.123s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/urdf/diana7.urdf
+[1.123s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/urdf/diana7.urdf.xacro
+[1.123s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/ament_index/resource_index/package_run_dependencies/diana7_description
+[1.123s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/ament_index/resource_index/parent_prefix_path/diana7_description
+[1.123s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/ament_prefix_path.sh
+[1.123s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/ament_prefix_path.dsv
+[1.124s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/path.sh
+[1.124s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/path.dsv
+[1.124s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.bash
+[1.124s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.sh
+[1.124s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.zsh
+[1.124s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.dsv
+[1.125s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.dsv
+[1.125s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/ament_index/resource_index/packages/diana7_description
+[1.125s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/cmake/diana7_descriptionConfig.cmake
+[1.125s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/cmake/diana7_descriptionConfig-version.cmake
+[1.125s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.xml
+[1.127s] Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/diana7_description

@@ -1,0 +1,17 @@
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/urdf/diana7.urdf
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/urdf/diana7.urdf.xacro
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/ament_index/resource_index/package_run_dependencies/diana7_description
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/ament_index/resource_index/parent_prefix_path/diana7_description
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/ament_prefix_path.sh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/ament_prefix_path.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/path.sh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/environment/path.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.bash
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.sh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.zsh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/local_setup.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/ament_index/resource_index/packages/diana7_description
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/cmake/diana7_descriptionConfig.cmake
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/cmake/diana7_descriptionConfig-version.cmake
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/diana7_description/share/diana7_description/package.xml

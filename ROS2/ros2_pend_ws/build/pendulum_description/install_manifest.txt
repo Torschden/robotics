@@ -1,0 +1,17 @@
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/urdf/pendulum.urdf.xacro
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/urdf/pendulum.urdf
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/ament_index/resource_index/package_run_dependencies/pendulum_description
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/ament_index/resource_index/parent_prefix_path/pendulum_description
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/ament_prefix_path.sh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/ament_prefix_path.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/path.sh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/path.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.bash
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.sh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.zsh
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.dsv
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/ament_index/resource_index/packages/pendulum_description
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/cmake/pendulum_descriptionConfig.cmake
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/cmake/pendulum_descriptionConfig-version.cmake
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.xml

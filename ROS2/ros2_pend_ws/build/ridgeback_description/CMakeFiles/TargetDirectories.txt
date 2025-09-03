@@ -1,0 +1,9 @@
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/uninstall.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/ridgeback_description_uninstall.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/test.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/edit_cache.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/rebuild_cache.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/list_install_components.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/install.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/install/local.dir
+/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/ridgeback_description/CMakeFiles/install/strip.dir

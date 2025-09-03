@@ -1,0 +1,18 @@
+running egg_info
+writing ../../build/simple_sim/simple_sim.egg-info/PKG-INFO
+writing dependency_links to ../../build/simple_sim/simple_sim.egg-info/dependency_links.txt
+writing requirements to ../../build/simple_sim/simple_sim.egg-info/requires.txt
+writing top-level names to ../../build/simple_sim/simple_sim.egg-info/top_level.txt
+reading manifest file '../../build/simple_sim/simple_sim.egg-info/SOURCES.txt'
+writing manifest file '../../build/simple_sim/simple_sim.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying launch/spawn_all.launch.py -> /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/share/simple_sim/launch
+running install_egg_info
+removing '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages/simple_sim-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/simple_sim/simple_sim.egg-info to /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages/simple_sim-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/install.log'

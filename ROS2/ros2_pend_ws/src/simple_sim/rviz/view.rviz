@@ -1,0 +1,9 @@
+Panels:
+  - Class: rviz/Displays
+    Name: Displays
+Displays:
+  - Class: rviz/RobotModel
+    Name: RobotModel
+  - Class: rviz/TF
+    Name: TF
+

@@ -1,0 +1,8 @@
+source;share/diana7_description/hook/cmake_prefix_path.ps1
+source;share/diana7_description/hook/cmake_prefix_path.dsv
+source;share/diana7_description/hook/cmake_prefix_path.sh
+source;share/diana7_description/local_setup.bash
+source;share/diana7_description/local_setup.dsv
+source;share/diana7_description/local_setup.ps1
+source;share/diana7_description/local_setup.sh
+source;share/diana7_description/local_setup.zsh

@@ -1,0 +1,46 @@
+[0.021s] Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/pendulum_description -DCMAKE_INSTALL_PREFIX=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description
+[0.080s] -- The C compiler identification is GNU 13.3.0
+[0.132s] -- The CXX compiler identification is GNU 13.3.0
+[0.151s] -- Detecting C compiler ABI info
+[0.260s] -- Detecting C compiler ABI info - done
+[0.266s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.267s] -- Detecting C compile features
+[0.267s] -- Detecting C compile features - done
+[0.278s] -- Detecting CXX compiler ABI info
+[0.398s] -- Detecting CXX compiler ABI info - done
+[0.404s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.405s] -- Detecting CXX compile features
+[0.405s] -- Detecting CXX compile features - done
+[0.414s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.622s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.832s] -- Found xacro: 2.0.13 (/opt/ros/jazzy/share/xacro/cmake)
+[0.840s] -- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.001s] -- Added test 'lint_cmake' to check CMake code style
+[1.003s] -- Added test 'xmllint' to check XML markup files
+[1.007s] -- Configuring done (1.0s)
+[1.009s] -- Generating done (0.0s)
+[1.011s] -- Build files have been written to: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description
+[1.019s] Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/pendulum_description -DCMAKE_INSTALL_PREFIX=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description
+[1.020s] Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description -- -j16 -l16
+[1.103s] Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description -- -j16 -l16
+[1.104s] Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description
+[1.116s] -- Install configuration: ""
+[1.116s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/urdf
+[1.116s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/urdf/pendulum.urdf.xacro
+[1.116s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/urdf/pendulum.urdf
+[1.116s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/ament_index/resource_index/package_run_dependencies/pendulum_description
+[1.117s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/ament_index/resource_index/parent_prefix_path/pendulum_description
+[1.117s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/ament_prefix_path.sh
+[1.117s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/ament_prefix_path.dsv
+[1.117s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/path.sh
+[1.117s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/environment/path.dsv
+[1.117s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.bash
+[1.117s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.sh
+[1.118s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.zsh
+[1.118s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/local_setup.dsv
+[1.118s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.dsv
+[1.118s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/ament_index/resource_index/packages/pendulum_description
+[1.118s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/cmake/pendulum_descriptionConfig.cmake
+[1.118s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/cmake/pendulum_descriptionConfig-version.cmake
+[1.118s] -- Installing: /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/pendulum_description/share/pendulum_description/package.xml
+[1.142s] Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bauer/nav2_ws/install/nav2_simple_commander:/home/bauer/nav2_ws/install/nav2_loopback_sim:/home/bauer/nav2_ws/install/learning_tf2_py:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/pendulum_description

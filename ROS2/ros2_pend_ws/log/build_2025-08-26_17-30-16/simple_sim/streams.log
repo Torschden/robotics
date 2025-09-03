@@ -1,0 +1,19 @@
+[0.676s] Invoking command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/simple_sim': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/simple_sim build --build-base /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/build install --record /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/install.log --single-version-externally-managed install_data
+[0.884s] running egg_info
+[0.899s] writing ../../build/simple_sim/simple_sim.egg-info/PKG-INFO
+[0.900s] writing dependency_links to ../../build/simple_sim/simple_sim.egg-info/dependency_links.txt
+[0.900s] writing requirements to ../../build/simple_sim/simple_sim.egg-info/requires.txt
+[0.900s] writing top-level names to ../../build/simple_sim/simple_sim.egg-info/top_level.txt
+[0.931s] reading manifest file '../../build/simple_sim/simple_sim.egg-info/SOURCES.txt'
+[0.931s] writing manifest file '../../build/simple_sim/simple_sim.egg-info/SOURCES.txt'
+[0.932s] running build
+[0.932s] running build_py
+[0.932s] running install
+[0.935s] running install_lib
+[0.953s] running install_data
+[0.953s] running install_egg_info
+[0.970s] removing '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages/simple_sim-0.0.0-py3.12.egg-info' (and everything under it)
+[0.970s] Copying ../../build/simple_sim/simple_sim.egg-info to /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages/simple_sim-0.0.0-py3.12.egg-info
+[0.970s] running install_scripts
+[1.084s] writing list of installed files to '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/install.log'
+[1.107s] Invoked command in '/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/src/simple_sim' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/install/simple_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/simple_sim build --build-base /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/build install --record /home/bauer/REPOS/Robotics/ROS2/ros2_pend_ws/build/simple_sim/install.log --single-version-externally-managed install_data

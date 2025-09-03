@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot name="diana7" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="diana_link">
+    <visual>
+      <geometry><sphere radius="0.15"/></geometry>
+      <material name="red"><color rgba="1 0 0 1"/></material>
+    </visual>
+    <collision>
+      <geometry><sphere radius="0.15"/></geometry>
+    </collision>
+    <inertial><mass value="0.5"/><inertia ixx="0.01" iyy="0.01" izz="0.01"/></inertial>
+  </link>
+</robot>
+

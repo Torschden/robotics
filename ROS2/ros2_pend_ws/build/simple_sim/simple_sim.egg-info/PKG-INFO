@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: simple-sim
+Version: 0.0.0
+Summary: Simple Gazebo+RViz sim with dummy robots
+Maintainer: your_name
+Maintainer-email: your@email.com
+License: Apache-2.0
