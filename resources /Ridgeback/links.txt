@@ -1,0 +1,5 @@
+https://github.com/ridgeback/
+https://www.clearpathrobotics.com/assets/guides/kinetic/ridgeback/
+https://docs.clearpathrobotics.com/docs/ros/
+
+https://docs.clearpathrobotics.com/docs/ros/tutorials/simulator/install
