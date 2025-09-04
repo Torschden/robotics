@@ -1,9 +1,12 @@
-classdef SloshingController < handle
-    properties (Access = private)
-        q_start;   % store last optimization start config
-        q_end;     % store last optimization end config
-    end
+%% Sloshing Control for Liquid-Filled Containers at Robot End-Effector
+% Based on "Point to point time optimal handling of unmounted rigid objects 
+% and liquid-filled containers" by Gattringer et al. (2023)
+%
+% This implementation provides trajectory optimization and control for 
+% handling liquid-filled containers with a robot manipulator while 
+% minimizing sloshing effects.
 
+classdef SloshingController < handle
     properties
         % Robot parameters
         n_joints = 6;           % Number of robot joints
@@ -61,11 +64,23 @@ classdef SloshingController < handle
         end
         
         function [q_opt, t_opt, success] = optimizeTrajectory(obj, q_start, q_end, options)
-
+            % Optimize time-optimal trajectory for liquid container handling
+            %
+            % Inputs:
+            %   q_start - Initial joint configuration [6×1]
+            %   q_end   - Final joint configuration [6×1]
+            %   options - Optimization options structure
+            %
+            % Outputs:
+            %   q_opt   - Optimal trajectory [N×6]
+            %   t_opt   - Optimal time duration
+            %   success - Optimization success flag
+            
             if nargin < 4
                 options = struct();
             end
-
+            
+            % Set default options
             if ~isfield(options, 'max_time')
                 options.max_time = 5.0; % Maximum allowed time
             end
@@ -78,15 +93,16 @@ classdef SloshingController < handle
             try
                 % Setup optimization problem
                 [problem, bounds] = obj.setupOptimizationProblem(q_start, q_end, options);
-
+                
+                % Solve using fmincon (interior-point method)
                 options_opt = optimoptions('fmincon', ...
                     'Algorithm', 'interior-point', ...
                     'Display', 'iter', ...
-                    'MaxFunctionEvaluations', 1e5, ...
-                    'MaxIterations', 2000, ...
+                    'MaxIterations', 1000, ...
                     'OptimalityTolerance', 1e-6, ...
                     'ConstraintTolerance', 1e-6);
                 
+                % Initial guess - minimum jerk trajectory
                 x0 = obj.generateInitialGuess(q_start, q_end, bounds.t_max);
                 
                 % Optimize
@@ -118,81 +134,23 @@ classdef SloshingController < handle
         end
         
         function [problem, bounds] = setupOptimizationProblem(obj, q_start, q_end, options)
-            if nargin < 4
-                options = struct();
-            end
-            dbg = isfield(options,'debug') && options.debug;
-        
-            % Number of decision variables
+            % Setup the optimization problem structure and bounds
+            
+            % Decision variables: [jerk_trajectory; final_time]
             n_vars = obj.N_shooting * obj.n_joints + 1;
-        
-            if dbg
-                fprintf('[setupOptimizationProblem] N_shooting=%d, n_joints=%d, n_vars=%d\n', ...
-                    obj.N_shooting, obj.n_joints, n_vars);
-                szJ = size(obj.max_joint_jerk);
-                fprintf('[setupOptimizationProblem] size(max_joint_jerk)=[%d %d]\n', szJ(1), szJ(2));
-                fprintf('[setupOptimizationProblem] expected jerk decision vector length = %d\n', ...
-                    obj.N_shooting * obj.n_joints);
-            end
-        
-            % --- Original (reverted) construction (this is where the error occurs) ---
-            try
-                if dbg
-                    fprintf('[setupOptimizationProblem] Building bounds using original formula:\n');
-                    fprintf('  lb = [-max_joint_jerk * ones(%d,1); 0.1]\n', obj.N_shooting * obj.n_joints);
-                    fprintf('  ub = [ max_joint_jerk * ones(%d,1); options.max_time]\n', obj.N_shooting * obj.n_joints);
-                end
-        
-                jerk_lb = -repmat(obj.max_joint_jerk(:), obj.N_shooting, 1);
-                jerk_ub =  repmat(obj.max_joint_jerk(:), obj.N_shooting, 1);
-                
-                bounds.lb = [jerk_lb; 0.1];
-                bounds.ub = [jerk_ub; options.max_time];
-        
-                if dbg
-                    fprintf('[setupOptimizationProblem] size(lb)=[%d %d], size(ub)=[%d %d]\n', ...
-                        size(bounds.lb,1), size(bounds.lb,2), size(bounds.ub,1), size(bounds.ub,2));
-                end
-        
-            catch ME
-                if dbg
-                    fprintf('\n[setupOptimizationProblem] *** DIMENSION ERROR while building bounds ***\n');
-                    fprintf('  Expression: -max_joint_jerk * ones(%d,1)\n', obj.N_shooting * obj.n_joints);
-                    fprintf('  size(max_joint_jerk) = [%d %d]\n', size(obj.max_joint_jerk,1), size(obj.max_joint_jerk,2));
-                    fprintf('  size(ones(...))       = [%d %d]\n', obj.N_shooting * obj.n_joints, 1);
-                    fprintf('  Message: %s\n', ME.message);
-                    fprintf('  Hint: use replication (repmat/kron) or elementwise ops, not matrix * here.\n');
-                    fprintf('  Example FIX (commented below) builds [N_shooting*n_joints × 1] vectors.\n\n');
-                end
-                rethrow(ME);
-            end
-            % -----------------------------------------------------------------------
-        
-            % % === FIX (uncomment to correct the bounds after confirming root cause) ===
-            % jerk_lb = -repmat(obj.max_joint_jerk(:), obj.N_shooting, 1);
-            % jerk_ub =  repmat(obj.max_joint_jerk(:), obj.N_shooting, 1);
-            % bounds.lb = [jerk_lb; 0.1];
-            % bounds.ub = [jerk_ub; options.max_time];
-            % if dbg
-            %     fprintf('[setupOptimizationProblem] (FIX) size(lb)=[%d %d], size(ub)=[%d %d]\n', ...
-            %         size(bounds.lb,1), size(bounds.lb,2), size(bounds.ub,1), size(bounds.ub,2));
-            % end
-            % % =========================================================================
-        
+            
+            bounds.lb = [-obj.max_joint_jerk * ones(obj.N_shooting * obj.n_joints, 1); 0.1];
+            bounds.ub = [obj.max_joint_jerk * ones(obj.N_shooting * obj.n_joints, 1); options.max_time];
             bounds.t_max = options.max_time;
-     
-            problem.n_vars  = obj.N_shooting * obj.n_joints + 1;
-            problem.q_start = q_start(:);
-            problem.q_end   = q_end(:);
+            
+            problem.n_vars = n_vars;
+            problem.q_start = q_start;
+            problem.q_end = q_end;
             problem.options = options;
-
         end
-
         function x0 = generateInitialGuess(obj, q_start, q_end, t_max)
-            % Use midpoint between lb and ub for jerks, half of t_max for time
-            jerk_guess = zeros(obj.N_shooting * obj.n_joints, 1);
-            time_guess = 0.5 * t_max;
-            x0 = [jerk_guess; time_guess];
+            % Start with zero jerk and maximum allowed time
+            x0 = [zeros(obj.N_shooting * obj.n_joints, 1); t_max];
         end
         function J = objectiveFunction(obj, x)
             % Objective = final time (last variable)
@@ -206,18 +164,8 @@ classdef SloshingController < handle
         end
         function [q_opt, t_opt] = extractTrajectory(obj, x)
             t_opt = x(end);
-            N = obj.N_shooting;
-        
-            % parameter from 0→1 as column
-            s = linspace(0,1,N)';
-        
-            % ensure start/end are column vectors
-            q0 = obj.q_start(:)';
-            qf = obj.q_end(:)';
-        
-            % linear interpolation [N×6]
-            q_opt = (1-s) * q0 + s * qf;
+            % Placeholder: just return start and end
+            q_opt = [zeros(1, obj.n_joints); zeros(1, obj.n_joints)];
         end
-
     end
 end
