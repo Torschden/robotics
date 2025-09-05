@@ -53,6 +53,9 @@
     % Generate comparison report
     generateComparisonReport(results)
 
+    controller.plotTrajectory(q_opt, t_opt);
+    controller.plotNormalizedVelocities(q_opt, t_opt);
+
 function task_params = defineTaskParameters()
     % Define the task parameters for liquid container handling
     
@@ -138,7 +141,7 @@ function visualizeResults(results)
         end
         
         % Plot trajectory and sloshing analysis
-        subplot(2, n_scenarios, i);
+        subplot(3, n_scenarios, i);
         if ~isempty(results{i}.plate_trajectory)
             plot3(results{i}.plate_trajectory.position(:,1), ...
                   results{i}.plate_trajectory.position(:,2), ...
@@ -149,7 +152,7 @@ function visualizeResults(results)
         end
         
         % Plot sloshing amplitude over time
-        subplot(2, n_scenarios, i + n_scenarios);
+        subplot(3, n_scenarios, i + n_scenarios);
         if ~isempty(results{i}.sloshing_analysis)
             plot(results{i}.sloshing_analysis.time, ...
                  results{i}.sloshing_analysis.sloshing_amplitude * 1000, 'r-', 'LineWidth', 2);
@@ -158,6 +161,20 @@ function visualizeResults(results)
             xlabel('Time [s]');
             ylabel('Sloshing Amplitude [mm]');
             title(sprintf('Sloshing Analysis - Scenario %d', i));
+            grid on;
+        end
+
+                % Plot sloshing amplitude over time
+        subplot(3, n_scenarios, i + 2*n_scenarios);
+        if ~isempty(results{i}.sloshing_analysis)
+            plot(results{i}.plate_trajectory.time, ...
+                 results{i}.plate_trajectory.velocity, 'r-', 'LineWidth', 2);
+            hold on;
+            yline(25, 'k--', 'Critical Height', 'LineWidth', 1.5);
+            xlabel('Time [s]');
+            ylabel('Sloshing Amplitude [mm]');
+            title(sprintf('Sloshing Analysis - Scenario %d', i));
+            legend();
             grid on;
         end
     end
@@ -359,6 +376,66 @@ function analysis = analyzeSloshingBehavior(controller, q_traj, t_final)
         % Estimate sloshing amplitude
         sloshing_amplitude(i) = controller.estimateSloshingAmplitude(ee_acc);
     end
+
+    function plotNormalizedVelocities(obj, q_traj, t_final)
+            % Plot normalized joint velocities (as fraction of max limits)
+            
+            if isempty(q_traj)
+                fprintf('No trajectory to plot\n');
+                return;
+            end
+            
+            time_vec = linspace(0, t_final, size(q_traj, 1));
+            
+            % Compute velocities via differentiation
+            qd_traj = gradient(q_traj, time_vec(2) - time_vec(1));
+            
+            % Normalize velocities by their respective limits
+            qd_normalized = zeros(size(qd_traj));
+            for i = 1:obj.n_joints
+                qd_normalized(:,i) = qd_traj(:,i) / obj.max_joint_vel(i);
+            end
+            
+            figure('Name', 'Normalized Joint Velocities');
+            
+            % Plot normalized velocities
+            plot(time_vec, qd_normalized, 'LineWidth', 1.5);
+            xlabel('Time [s]');
+            ylabel('Normalized Velocity (fraction of limit)');
+            title('Normalized Joint Velocities');
+            legend('J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'Location', 'best');
+            grid on;
+            
+            % Add reference lines
+            hold on;
+            plot([time_vec(1), time_vec(end)], [1, 1], 'r--', 'LineWidth', 2, 'DisplayName', '+100% limit');
+            plot([time_vec(1), time_vec(end)], [-1, -1], 'r--', 'LineWidth', 2, 'DisplayName', '-100% limit');
+            plot([time_vec(1), time_vec(end)], [1.5, 1.5], 'k:', 'LineWidth', 1, 'DisplayName', 'Constraint limit (150%)');
+            plot([time_vec(1), time_vec(end)], [-1.5, -1.5], 'k:', 'LineWidth', 1, 'DisplayName', 'Constraint limit (-150%)');
+            hold off;
+            
+            % Set y-axis limits for better visualization
+            ylim([-2, 2]);
+            
+            % Print maximum normalized velocities
+            fprintf('\nMaximum normalized velocities:\n');
+            for i = 1:obj.n_joints
+                max_norm_vel = max(abs(qd_normalized(:,i)));
+                fprintf('  Joint %d: %.2f%% of limit (%.3f/%.3f rad/s)\n', ...
+                    i, max_norm_vel*100, max(abs(qd_traj(:,i))), obj.max_joint_vel(i));
+            end
+            
+            % Check for violations
+            violations = any(abs(qd_normalized) > 1.5, 1);
+            if any(violations)
+                fprintf('\nVelocity constraint violations (>150%% limit):\n');
+                for i = find(violations)
+                    fprintf('  Joint %d: VIOLATION\n', i);
+                end
+            else
+                fprintf('\nAll joints within velocity constraints (150%% limit)\n');
+            end
+        end
     
     % Analysis results
     analysis = struct();

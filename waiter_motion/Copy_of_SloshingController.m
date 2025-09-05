@@ -24,8 +24,8 @@ classdef Copy_of_SloshingController < handle
         max_twist_torque;       % Maximum twisting torque
         
         % Optimization parameters
-        N_shooting = 150;       % Number of shooting intervals
-        weight_smoothness = 1e-6; % Smoothness weight factor
+        N_shooting = 30;        % Further reduced for debugging
+        weight_smoothness = 1e-2; % Higher weight for smoother trajectories
         
         % Physical limits
         max_joint_vel;          % Maximum joint velocities [rad/s]
@@ -39,7 +39,7 @@ classdef Copy_of_SloshingController < handle
     end
     
     methods
-        function obj = SloshingController(robot_config)
+        function obj = Copy_of_SloshingController(robot_config)
             % Constructor - initialize controller with robot configuration
             if nargin > 0
                 obj.initializeRobotParameters(robot_config);
@@ -106,6 +106,13 @@ classdef Copy_of_SloshingController < handle
                 % Initial guess - minimum jerk trajectory
                 x0 = obj.generateInitialGuess(q_start, q_end, bounds.t_max);
                 
+                % Debug: Print dimensions
+                fprintf('Problem setup:\n');
+                fprintf('  Number of variables: %d\n', problem.n_vars);
+                fprintf('  Length of x0: %d\n', length(x0));
+                fprintf('  Length of lb: %d\n', length(bounds.lb));
+                fprintf('  Length of ub: %d\n', length(bounds.ub));
+                
                 % Optimize
                 [x_opt, fval, exitflag] = fmincon(@(x) obj.objectiveFunction(x), ...
                     x0, [], [], [], [], bounds.lb, bounds.ub, ...
@@ -116,7 +123,7 @@ classdef Copy_of_SloshingController < handle
                 
                 if success
                     % Extract solution
-                    [q_opt, t_opt] = obj.extractTrajectory(x_opt);
+                    [q_opt, t_opt] = obj.extractTrajectory(x_opt, q_start);
                     obj.trajectory = q_opt;
                     obj.time_optimal = t_opt;
                     fprintf('Optimization successful! Optimal time: %.3f s\n', t_opt);
@@ -140,10 +147,11 @@ classdef Copy_of_SloshingController < handle
             % Decision variables: [jerk_trajectory; final_time]
             n_vars = obj.N_shooting * obj.n_joints + 1;
             
+            % Create bounds for jerk variables
             jerk_lb = -repmat(obj.max_joint_jerk(:), obj.N_shooting, 1);
             jerk_ub =  repmat(obj.max_joint_jerk(:), obj.N_shooting, 1);
             
-            % Append scalar bound for the final time
+            % Create complete bounds including final time
             bounds.lb = [jerk_lb; 0.1];             % enforce min time > 0.1 s
             bounds.ub = [jerk_ub; options.max_time]; % max allowed time
 
@@ -153,7 +161,6 @@ classdef Copy_of_SloshingController < handle
             problem.q_start = q_start;
             problem.q_end = q_end;
             problem.options = options;
-
         end
         
         function x0 = generateInitialGuess(obj, q_start, q_end, t_max)
@@ -168,15 +175,27 @@ classdef Copy_of_SloshingController < handle
                 % Simple bang-coast-bang jerk profile
                 jerk_mag = 8 * (q_end(i) - q_start(i)) / t_guess^3;
                 
+                % Ensure jerk magnitude respects limits
+                jerk_mag = min(abs(jerk_mag), obj.max_joint_jerk(i)) * sign(jerk_mag);
+                
                 % First third: positive jerk
-                jerk_profile(1:obj.N_shooting/3, i) = jerk_mag;
-                % Middle third: zero jerk
+                n_accel = floor(obj.N_shooting/3);
+                jerk_profile(1:n_accel, i) = jerk_mag;
+                
+                % Middle third: zero jerk (coast phase)
                 % Last third: negative jerk
-                jerk_profile(2*obj.N_shooting/3+1:end, i) = -jerk_mag;
+                n_decel = floor(obj.N_shooting/3);
+                jerk_profile(end-n_decel+1:end, i) = -jerk_mag;
             end
             
-            % Flatten and append time
+            % Flatten jerk profile and append time
             x0 = [jerk_profile(:); t_guess];
+            
+            % Ensure x0 length matches expected number of variables
+            expected_length = obj.N_shooting * obj.n_joints + 1;
+            if length(x0) ~= expected_length
+                error('Initial guess length mismatch: expected %d, got %d', expected_length, length(x0));
+            end
         end
         
         function J = objectiveFunction(obj, x)
@@ -204,37 +223,37 @@ classdef Copy_of_SloshingController < handle
             
             % Inequality constraints
             c = [];
-            % 
-            % % Joint velocity limits
-            % for j = 1:size(qd_traj, 1)
-            %     vel_constraints = abs(qd_traj(j,:)) - obj.max_joint_vel;
-            %     c = [c; vel_constraints'];
-            % end
-            % 
-            % % Joint acceleration limits  
-            % for j = 1:size(qdd_traj, 1)
-            %     acc_constraints = abs(qdd_traj(j,:)) - obj.max_joint_acc;
-            %     c = [c; acc_constraints'];
-            % end
-            % 
-            % % Motor torque limits (simplified inverse dynamics)
-            % for i = 1:size(q_traj, 1)
-            %     tau = obj.computeInverseDynamics(q_traj(i,:)', qd_traj(i,:)', qdd_traj(i,:)');
-            %     torque_constraints = abs(tau) - obj.max_motor_torque';
-            %     c = [c; torque_constraints];
-            % end
-            % 
-            % % Contact force constraints (anti-slip, anti-tip)
-            % if options.include_sloshing
-            %     contact_constraints = obj.evaluateContactConstraints(q_traj, qd_traj, qdd_traj);
-            %     c = [c; contact_constraints];
-            % end
-            % 
-            % % Sloshing constraints (critical filling height consideration)
-            % if options.include_sloshing
-            %     sloshing_constraints = obj.evaluateSloshingConstraints(q_traj, qd_traj, qdd_traj);
-            %     c = [c; sloshing_constraints];
-            % end
+            
+            % Joint velocity limits
+            for j = 1:size(qd_traj, 1)
+                vel_constraints = abs(qd_traj(j,:)) - obj.max_joint_vel;
+                c = [c; vel_constraints'];
+            end
+            
+            % Joint acceleration limits  
+            for j = 1:size(qdd_traj, 1)
+                acc_constraints = abs(qdd_traj(j,:)) - obj.max_joint_acc;
+                c = [c; acc_constraints'];
+            end
+            
+            % Motor torque limits (simplified inverse dynamics)
+            for i = 1:size(q_traj, 1)
+                tau = obj.computeInverseDynamics(q_traj(i,:)', qd_traj(i,:)', qdd_traj(i,:)');
+                torque_constraints = abs(tau) - obj.max_motor_torque';
+                c = [c; torque_constraints];
+            end
+            
+            % Contact force constraints (anti-slip, anti-tip)
+            if options.include_sloshing
+                contact_constraints = obj.evaluateContactConstraints(q_traj, qd_traj, qdd_traj);
+                c = [c; contact_constraints];
+            end
+            
+            % Sloshing constraints (critical filling height consideration)
+            if options.include_sloshing
+                sloshing_constraints = obj.evaluateSloshingConstraints(q_traj, qd_traj, qdd_traj);
+                c = [c; sloshing_constraints];
+            end
 
             % Equality constraints (boundary conditions)
             ceq = [];
@@ -369,14 +388,13 @@ classdef Copy_of_SloshingController < handle
             amplitude = min(0.01, a_horizontal * 0.002); % Max 1cm sloshing
         end
         
-        function [q_traj, t_opt] = extractTrajectory(obj, x_opt)
+        function [q_traj, t_opt] = extractTrajectory(obj, x_opt, q_start)
             % Extract optimized trajectory from solution vector
             
             t_opt = x_opt(end);
             jerk_vars = reshape(x_opt(1:end-1), obj.N_shooting, obj.n_joints);
             
             % Integrate to get full trajectory
-            q_start = [0; 0; 0; 0; 0; 0]; % This should be stored from optimization
             [q_traj, ~, ~] = obj.integrateTrajectory(jerk_vars, t_opt, q_start);
         end
         
@@ -422,6 +440,66 @@ classdef Copy_of_SloshingController < handle
             grid on;
         end
         
+        function plotNormalizedVelocities(obj, q_traj, t_final)
+            % Plot normalized joint velocities (as fraction of max limits)
+            
+            if isempty(q_traj)
+                fprintf('No trajectory to plot\n');
+                return;
+            end
+            
+            time_vec = linspace(0, t_final, size(q_traj, 1));
+            
+            % Compute velocities via differentiation
+            qd_traj = gradient(q_traj, time_vec(2) - time_vec(1));
+            
+            % Normalize velocities by their respective limits
+            qd_normalized = zeros(size(qd_traj));
+            for i = 1:obj.n_joints
+                qd_normalized(:,i) = qd_traj(:,i) / obj.max_joint_vel(i);
+            end
+            
+            figure('Name', 'Normalized Joint Velocities');
+            
+            % Plot normalized velocities
+            plot(time_vec, qd_normalized, 'LineWidth', 1.5);
+            xlabel('Time [s]');
+            ylabel('Normalized Velocity (fraction of limit)');
+            title('Normalized Joint Velocities');
+            legend('J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'Location', 'best');
+            grid on;
+            
+            % Add reference lines
+            hold on;
+            plot([time_vec(1), time_vec(end)], [1, 1], 'r--', 'LineWidth', 2, 'DisplayName', '+100% limit');
+            plot([time_vec(1), time_vec(end)], [-1, -1], 'r--', 'LineWidth', 2, 'DisplayName', '-100% limit');
+            plot([time_vec(1), time_vec(end)], [1.5, 1.5], 'k:', 'LineWidth', 1, 'DisplayName', 'Constraint limit (150%)');
+            plot([time_vec(1), time_vec(end)], [-1.5, -1.5], 'k:', 'LineWidth', 1, 'DisplayName', 'Constraint limit (-150%)');
+            hold off;
+            
+            % Set y-axis limits for better visualization
+            ylim([-2, 2]);
+            
+            % Print maximum normalized velocities
+            fprintf('\nMaximum normalized velocities:\n');
+            for i = 1:obj.n_joints
+                max_norm_vel = max(abs(qd_normalized(:,i)));
+                fprintf('  Joint %d: %.2f%% of limit (%.3f/%.3f rad/s)\n', ...
+                    i, max_norm_vel*100, max(abs(qd_traj(:,i))), obj.max_joint_vel(i));
+            end
+            
+            % Check for violations
+            violations = any(abs(qd_normalized) > 1.5, 1);
+            if any(violations)
+                fprintf('\nVelocity constraint violations (>150%% limit):\n');
+                for i = find(violations)
+                    fprintf('  Joint %d: VIOLATION\n', i);
+                end
+            else
+                fprintf('\nAll joints within velocity constraints (150%% limit)\n');
+            end
+        end
+        
         function success = validateTrajectory(obj, q_traj, t_final)
             % Validate that the trajectory satisfies all constraints
             
@@ -450,6 +528,24 @@ classdef Copy_of_SloshingController < handle
                 fprintf('Trajectory validation: PASSED\n');
             else
                 fprintf('Trajectory validation: FAILED\n');
+            end
+        end
+        
+        function initializeRobotParameters(obj, robot_config)
+            % Initialize robot parameters from configuration
+            % This method was referenced but not implemented in original code
+            
+            if isfield(robot_config, 'max_joint_vel')
+                obj.max_joint_vel = robot_config.max_joint_vel;
+            end
+            if isfield(robot_config, 'max_joint_acc')
+                obj.max_joint_acc = robot_config.max_joint_acc;
+            end
+            if isfield(robot_config, 'max_joint_jerk')
+                obj.max_joint_jerk = robot_config.max_joint_jerk;
+            end
+            if isfield(robot_config, 'max_motor_torque')
+                obj.max_motor_torque = robot_config.max_motor_torque;
             end
         end
     end
