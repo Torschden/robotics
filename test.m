@@ -2,14 +2,14 @@ function test()
     % Nonlinear Sloshing Dynamics Simulation
     % Based on spring-damper approximation with coupled equations of motion
     
-    clear; clc; close all;
+    % clear; clc; close all;
     
     %% Parameters
     % Physical parameters
     omega_n = 2*pi*0.5;  % Natural frequency (rad/s)
     zeta_n = 0.05;       % Damping ratio
     g = 9.81;            % Gravitational acceleration (m/s^2)
-    R = 1.0;             % Tank radius (m)
+    R = 0.04;            % Tank radius (m)
     alpha_n = 1.0;       % Nonlinear coefficient
     
     % Simulation parameters
@@ -19,7 +19,7 @@ function test()
     
     %% Excitation Definition
     % Define arbitrary excitation (you can modify this)
-    excitation_type = 'random'; % Options: 'harmonic', 'chirp', 'step', 'random'
+    excitation_type = 'point_to_point'; % Options: 'harmonic', 'chirp', 'step', 'random'
     
     switch excitation_type
         case 'harmonic'
