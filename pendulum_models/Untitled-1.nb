@@ -1,0 +1,438 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     14905,        428]
+NotebookOptionsPosition[     14008,        405]
+NotebookOutlinePosition[     14407,        421]
+CellTagsIndexPosition[     14364,        418]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Clear", " ", "previous", " ", "definitions"}], "*)"}], 
+  RowBox[{
+   RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\n", 
+   RowBox[{
+    RowBox[{"$Assumptions", "=", 
+     RowBox[{
+      RowBox[{"\[Xi]", ">", "0"}], "&&", 
+      RowBox[{"R", ">", "0"}], "&&", 
+      RowBox[{"h", ">", "0"}], "&&", 
+      RowBox[{"\[Omega]", ">", "0"}], "&&", 
+      RowBox[{"\[Rho]", ">", "0"}]}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Declare", " ", "symbols"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Rho]", "=", 
+     RowBox[{"Symbol", "[", "\"\<\[Rho]\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"R", "=", 
+     RowBox[{"Symbol", "[", "\"\<R\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"h", "=", 
+     RowBox[{"Symbol", "[", "\"\<h\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"\[Xi]", "=", 
+     RowBox[{"Symbol", "[", "\"\<\[Xi]\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"\[Omega]", "=", 
+     RowBox[{"Symbol", "[", "\"\<\[Omega]\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"g", "=", 
+     RowBox[{"Symbol", "[", "\"\<g\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"t", "=", 
+     RowBox[{"Symbol", "[", "\"\<t\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"z", "=", 
+     RowBox[{"Symbol", "[", "\"\<z\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"A", "=", 
+     RowBox[{"Symbol", "[", "\"\<A\>\"", "]"}]}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"amplitude", " ", "of", " ", "potential"}], "*)"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Define", " ", "potential", " ", 
+      RowBox[{"function", ":", 
+       RowBox[{"\[CurlyPhi]", 
+        RowBox[{"(", 
+         RowBox[{"r", ",", "z", ",", "t"}], ")"}]}]}]}], "=", 
+     RowBox[{"A", " ", "J1", 
+      RowBox[{"(", 
+       RowBox[{"\[Xi]", " ", 
+        RowBox[{"r", "/", "R"}]}], ")"}], " ", "cosh", 
+      RowBox[{"(", 
+       RowBox[{"\[Xi]", " ", 
+        RowBox[{"z", "/", "R"}]}], ")"}], " ", 
+      RowBox[{"e", "^", 
+       RowBox[{"{", "i\[Omega]t", "}"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+   
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[CurlyPhi]", "[", 
+      RowBox[{"r_", ",", "z_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{"A", "*", 
+      RowBox[{"BesselJ", "[", 
+       RowBox[{"1", ",", 
+        RowBox[{"\[Xi]", "*", 
+         RowBox[{"r", "/", "R"}]}]}], "]"}], "*", 
+      RowBox[{"Cosh", "[", 
+       RowBox[{"\[Xi]", "*", 
+        RowBox[{"z", "/", "R"}]}], "]"}], "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"I", "*", "\[Omega]", "*", "t"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Linearized", " ", "Bernoulli", " ", "pressure"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"p", "[", 
+      RowBox[{"r_", ",", "z_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[Rho]"}], "*", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"\[CurlyPhi]", "[", 
+          RowBox[{"r", ",", "z", ",", "t"}], "]"}], ",", "t"}], "]"}]}], "//",
+       "Simplify"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Evaluate", " ", "pressure", " ", "at", " ", "wall", " ", 
+     RowBox[{"(", 
+      RowBox[{"r", "=", "R"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"pWall", "[", 
+      RowBox[{"z_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"p", "[", 
+       RowBox[{"R", ",", "z", ",", "t"}], "]"}], "//", "FullSimplify"}]}], 
+    ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Integrate", " ", "pressure", " ", "over", " ", "wall", " ", "to", " ", 
+     "get", " ", "total", " ", "lateral", " ", "force"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Ftotal", "[", "t_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"2", "*", "Pi", "*", "R", "*", 
+       RowBox[{"Integrate", "[", 
+        RowBox[{
+         RowBox[{"pWall", "[", 
+          RowBox[{"z", ",", "t"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"z", ",", "0", ",", "h"}], "}"}]}], "]"}]}], "//", 
+      "FullSimplify"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Modal", " ", "displacement", " ", "in", " ", "complex", " ", "form"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "t_", "]"}], ":=", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"I", "*", "\[Omega]", "*", "t"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "[", "t_", "]"}], ":=", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"x", "[", "t", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "2"}], "}"}]}], "]"}]}], ";"}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"gives", "-", 
+     RowBox[{"\[Omega]\.b2", " ", 
+      RowBox[{"e", "^", 
+       RowBox[{"{", "i\[Omega]t", "}"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+   "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Modal", " ", "mass", " ", "from", " ", "force"}], "=", 
+     RowBox[{"mass", "*", "acceleration"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mn", ":=", 
+     RowBox[{"FullSimplify", "[", 
+      RowBox[{
+       RowBox[{"Ftotal", "[", "t", "]"}], "/", 
+       RowBox[{"a", "[", "t", "]"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Total", " ", "fluid", " ", "mass"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mF", ":=", 
+     RowBox[{"\[Rho]", "*", "Pi", "*", 
+      RowBox[{"R", "^", "2"}], "*", "h"}]}], ";"}], "\[IndentingNewLine]", 
+   "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Normalize", " ", "modal", " ", "mass"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mnNormalized", ":=", 
+     RowBox[{"FullSimplify", "[", 
+      RowBox[{"mn", "/", "mF"}], "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
+   
+   RowBox[{"(*", 
+    RowBox[{
+    "Apply", " ", "boundary", " ", "condition", " ", "at", " ", "free", " ", 
+     "surface", " ", "to", " ", "eliminate", " ", "A"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"From", " ", 
+      RowBox[{
+       RowBox[{"\[PartialD]", "\[CurlyPhi]"}], "/", 
+       RowBox[{"\[PartialD]", "z"}]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "/", "g"}], ")"}], " ", 
+       RowBox[{
+        RowBox[{"\[PartialD]", "\.b2\[CurlyPhi]"}], "/", 
+        RowBox[{"\[PartialD]", "t\.b2"}]}], " ", "at", " ", "z"}], "=", 
+      "h"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"phiZ", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"\[CurlyPhi]", "[", 
+        RowBox[{"r", ",", "z", ",", "t"}], "]"}], ",", "z"}], "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"phiTT", "=", 
+     RowBox[{"D", "[", 
+      RowBox[{
+       RowBox[{"\[CurlyPhi]", "[", 
+        RowBox[{"r", ",", "z", ",", "t"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "2"}], "}"}]}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "Evaluate", " ", "phiZ", " ", "and", " ", "phiTT", " ", "at", " ", 
+       "z"}], "=", "h"}], ",", 
+     RowBox[{"drop", " ", "time", " ", "exponential"}]}], "*)"}], 
+   RowBox[{
+    RowBox[{"phiZ0", "=", 
+     RowBox[{
+      RowBox[{"Coefficient", "[", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"\[CurlyPhi]", "[", 
+           RowBox[{"r", ",", "z", ",", "t"}], "]"}], ",", "z"}], "]"}], ",", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"I", " ", "\[Omega]", " ", "t"}], "]"}]}], "]"}], "/.", " ", 
+      
+      RowBox[{"z", "->", "h"}]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"phiTT0", "=", 
+     RowBox[{
+      RowBox[{"Coefficient", "[", 
+       RowBox[{
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{"\[CurlyPhi]", "[", 
+           RowBox[{"r", ",", "z", ",", "t"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "2"}], "}"}]}], "]"}], ",", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"I", " ", "\[Omega]", " ", "t"}], "]"}]}], "]"}], "/.", " ", 
+      
+      RowBox[{"z", "->", "h"}]}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Solve", " ", "phiZ0"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "/", "g"}], ")"}], " ", "phiTT0"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Abc", "=", 
+     RowBox[{"FullSimplify", "[", 
+      RowBox[{
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{"phiZ0", "==", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1", "/", "g"}], ")"}], "*", "phiTT0"}]}], ",", "A"}], 
+        "]"}], "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Substitute", " ", "A", " ", "into", " ", "m_n", " ", "expression"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"mnFinal", ":=", 
+     RowBox[{"FullSimplify", "[", 
+      RowBox[{"mn", "/.", " ", 
+       RowBox[{"A", "->", "Abc"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Normalize", " ", "final", " ", "modal", " ", "mass"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"mnNormalizedFinal", ":=", 
+     RowBox[{"FullSimplify", "[", 
+      RowBox[{"mnFinal", "/", "mF"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Display", " ", "results"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Modal mass m_n (before applying BC) = \>\"", ",", "mn"}], 
+     "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Normalization: m_n / m_F = \>\"", ",", "mnNormalized"}], 
+     "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Free-surface BC gives A = \>\"", ",", "Abc"}], "]"}], ";"}],
+    "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Final m_n (after BC applied) = \>\"", ",", "mnFinal"}], 
+     "]"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Final normalized modal mass m_n / m_F = \>\"", ",", 
+      "mnNormalizedFinal"}], "]"}], ";"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9617286416695137`*^9, 3.96172864166954*^9}, {
+  3.961728710907992*^9, 3.9617287145405073`*^9}},
+ CellLabel->
+  "In[318]:=",ExpressionUUID->"0fe2bbc9-a300-4c63-afe8-afad16213fd0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Modal mass m_n (before applying BC) = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"2", " ", "\[ImaginaryI]", " ", "A", " ", "\[Pi]", " ", 
+     SuperscriptBox["R", "2"], " ", "\[Rho]", " ", 
+     RowBox[{"BesselJ", "[", 
+      RowBox[{"1", ",", "\[Xi]"}], "]"}], " ", 
+     RowBox[{"Sinh", "[", 
+      FractionBox[
+       RowBox[{"h", " ", "\[Xi]"}], "R"], "]"}]}], 
+    RowBox[{"\[Xi]", " ", "\[Omega]"}]]}],
+  SequenceForm[
+  "Modal mass m_n (before applying BC) = ", Complex[0, 2] $CellContext`A 
+   Pi $CellContext`R^2 $CellContext`\[Xi]^(-1) $CellContext`\[Rho] \
+$CellContext`\[Omega]^(-1) BesselJ[1, $CellContext`\[Xi]] 
+   Sinh[$CellContext`h $CellContext`R^(-1) $CellContext`\[Xi]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.961728734453475*^9},
+ CellLabel->
+  "During evaluation of \
+In[318]:=",ExpressionUUID->"16a5122b-6c6f-4174-8e92-7463e1a11253"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Normalization: m_n / m_F = \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"2", " ", "\[ImaginaryI]", " ", "A", " ", 
+     RowBox[{"BesselJ", "[", 
+      RowBox[{"1", ",", "\[Xi]"}], "]"}], " ", 
+     RowBox[{"Sinh", "[", 
+      FractionBox[
+       RowBox[{"h", " ", "\[Xi]"}], "R"], "]"}]}], 
+    RowBox[{"h", " ", "\[Xi]", " ", "\[Omega]"}]]}],
+  SequenceForm[
+  "Normalization: m_n / m_F = ", 
+   Complex[0, 
+     2] $CellContext`A $CellContext`h^(-1) $CellContext`\[Xi]^(-1) \
+$CellContext`\[Omega]^(-1) BesselJ[1, $CellContext`\[Xi]] 
+   Sinh[$CellContext`h $CellContext`R^(-1) $CellContext`\[Xi]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9617287345977907`*^9},
+ CellLabel->
+  "During evaluation of \
+In[318]:=",ExpressionUUID->"e0f0c4c0-bdcf-4fe5-811b-05d326b7d62b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Free-surface BC gives A = \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm["Free-surface BC gives A = ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9617287345990334`*^9},
+ CellLabel->
+  "During evaluation of \
+In[318]:=",ExpressionUUID->"472b51a4-75ff-4682-9dbc-9fd3cbed843f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Final m_n (after BC applied) = \"\>", "\[InvisibleSpace]", 
+   "0"}],
+  SequenceForm["Final m_n (after BC applied) = ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.961728734726881*^9},
+ CellLabel->
+  "During evaluation of \
+In[318]:=",ExpressionUUID->"32794db1-bbc9-4549-85c3-85952a5ffca3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Final normalized modal mass m_n / m_F = \"\>", "\[InvisibleSpace]",
+    "0"}],
+  SequenceForm["Final normalized modal mass m_n / m_F = ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.961728734855267*^9},
+ CellLabel->
+  "During evaluation of \
+In[318]:=",ExpressionUUID->"e91e2463-0452-4916-8704-2e56966ca7f7"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{606, 667.5},
+WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
+FrontEndVersion->"14.2 for Linux x86 (64-bit) (March 16, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5d6cbf19-c335-4e78-ad43-f5f6db57f80a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 10537, 299, 1374, "Input",ExpressionUUID->"0fe2bbc9-a300-4c63-afe8-afad16213fd0"],
+Cell[CellGroupData[{
+Cell[11138, 325, 932, 21, 75, "Print",ExpressionUUID->"16a5122b-6c6f-4174-8e92-7463e1a11253"],
+Cell[12073, 348, 842, 21, 53, "Print",ExpressionUUID->"e0f0c4c0-bdcf-4fe5-811b-05d326b7d62b"],
+Cell[12918, 371, 338, 8, 23, "Print",ExpressionUUID->"472b51a4-75ff-4682-9dbc-9fd3cbed843f"],
+Cell[13259, 381, 350, 9, 23, "Print",ExpressionUUID->"32794db1-bbc9-4549-85c3-85952a5ffca3"],
+Cell[13612, 392, 368, 9, 23, "Print",ExpressionUUID->"e91e2463-0452-4916-8704-2e56966ca7f7"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
